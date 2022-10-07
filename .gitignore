@@ -1,0 +1,8 @@
+.vs/
+Debug/
+x64/
+*.rar
+*.pdf
+*.mp4
+Resources/
+framework/
