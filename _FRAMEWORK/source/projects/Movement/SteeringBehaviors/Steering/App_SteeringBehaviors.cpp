@@ -149,6 +149,12 @@ void App_SteeringBehaviors::SetAgentBehavior(ImGui_Agent& a)
 	case BehaviorTypes::Wander:
 		a.pBehavior = new Wander();
 		break;
+	case BehaviorTypes::Pursuit:
+		a.pBehavior = new Pursuit();
+		break;
+	case BehaviorTypes::Evade:
+		a.pBehavior = new Evade();
+		break;
 	}
 
 	UpdateTarget(a);

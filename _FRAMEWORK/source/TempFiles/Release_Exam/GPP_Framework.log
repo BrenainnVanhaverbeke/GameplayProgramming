@@ -1,0 +1,34 @@
+﻿  stdafx.cpp
+  EGeometry2DTypes.cpp
+  EInputManager.cpp
+  EMatrix2x3.cpp
+  ERigidBodyBox2D.cpp
+  EPhysicsWorldBox2D.cpp
+  ECamera2D.cpp
+  SDLDebugRenderer2D.cpp
+  SDLFrame.cpp
+  ETimer_SDL.cpp
+  EImmediateUI.cpp
+  SDLWindow.cpp
+  gl3w.c
+  main.cpp
+  App_Sandbox.cpp
+  SandboxAgent.cpp
+C:\Users\Brenainn\source\repos\GameplayProgramming\_FRAMEWORK\source\projects\Movement\Sandbox\SandboxAgent.cpp(46,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Brenainn\source\repos\GameplayProgramming\_FRAMEWORK\source\projects\Movement\Sandbox\SandboxAgent.cpp(49,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  App_CombinedSteering.cpp
+  CombinedSteeringBehaviors.cpp
+  App_Flocking.cpp
+  Flock.cpp
+C:\Users\Brenainn\source\repos\GameplayProgramming\_FRAMEWORK\source\projects\Movement\SteeringBehaviors\Flocking\Flock.cpp(136,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Brenainn\source\repos\GameplayProgramming\_FRAMEWORK\source\projects\Movement\SteeringBehaviors\Flocking\Flock.cpp(138,21): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Brenainn\source\repos\GameplayProgramming\_FRAMEWORK\source\projects\Movement\SteeringBehaviors\Flocking\Flock.cpp(145,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Brenainn\source\repos\GameplayProgramming\_FRAMEWORK\source\projects\Movement\SteeringBehaviors\Flocking\Flock.cpp(147,21): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  FlockingSteeringBehaviors.cpp
+  Compiling...
+  App_SteeringBehaviors.cpp
+  Obstacle.cpp
+  SteeringAgent.cpp
+  SteeringBehaviors.cpp
+  BaseAgent.cpp
+LINK : fatal error LNK1181: cannot open input file 'GPP_PluginBase.lib'

@@ -35,6 +35,9 @@ public:
 	bool IsAutoOrienting() const { return m_AutoOrient; }
 	void SetAutoOrient(bool autoOrient) { m_AutoOrient = autoOrient; }
 
+	Elite::Vector2 GetOldPosition() const { return m_OldPosition; }
+	void SetOldPosition(Elite::Vector2 position) { m_OldPosition = position; }
+
 	Elite::Vector2 GetDirection() const { return GetLinearVelocity().GetNormalized(); }
 
 	virtual void SetSteeringBehavior(ISteeringBehavior* pBehavior) { m_pSteeringBehavior = pBehavior; }
@@ -51,5 +54,7 @@ protected:
 	float m_MaxAngularSpeed = 10.f;
 	bool m_AutoOrient = false;
 	bool m_RenderBehavior = false;
+
+	Elite::Vector2 m_OldPosition;
 };
 #endif

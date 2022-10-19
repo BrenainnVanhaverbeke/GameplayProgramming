@@ -54,14 +54,18 @@ public:
 class Flee : public ISteeringBehavior
 {
 public:
-	Flee();
+	Flee(float safeRadius = 20.0f);
 	virtual ~Flee() = default;
+
+	//Properties
+	float GetSafeRadius();
+	void SetSafeRadius(float safeRadius);
 
 	//Flee Behaviour
 	SteeringOutput CalculateSteering(float deltaT, SteeringAgent* pAgent) override;
 
 private:
-	const float m_SafeRadius;
+	float m_SafeRadius;
 };
 
 ///////////////////////////////////////
@@ -106,6 +110,7 @@ public:
 
 	//Wander Behaviour
 	SteeringOutput CalculateSteering(float deltaT, SteeringAgent* pAgent) override;
+	void SetWanderOffset(float wanderOffset);
 
 protected:
 	float m_Radius;
@@ -116,6 +121,32 @@ protected:
 	void SetTargetWithVector(SteeringAgent* pAgent);
 	void SetTargetWithAngle(SteeringAgent* pAgent);
 	void RenderDebug(Elite::Vector2& circleCenter, SteeringAgent* pAgent);
+};
+
+///////////////////////////////////////
+//Pursuit
+//****
+class Pursuit : public Seek
+{
+public:
+	Pursuit() = default;
+	virtual ~Pursuit() = default;
+
+	//Pursuit Behaviour
+	SteeringOutput CalculateSteering(float deltaT, SteeringAgent* pAgent) override;
+};
+
+///////////////////////////////////////
+//Evade
+//****
+class Evade : public Flee
+{
+public:
+	Evade(float safeRadius = 20.0f);
+	virtual ~Evade() = default;
+
+	//Evade Behaviour
+	SteeringOutput CalculateSteering(float deltaT, SteeringAgent* pAgent) override;
 };
 
 #endif
