@@ -82,11 +82,21 @@ SteeringOutput Arrive::CalculateSteering(float deltaT, SteeringAgent* pAgent)
 	Vector2 velocity{ toTarget.GetNormalized() * maxSpeed };
 
 	if (distance < m_SlowRadius * m_SlowRadius)
-		velocity *= pAgent->GetMaxLinearSpeed() * distance / (m_SlowRadius * m_SlowRadius);
+		velocity *= distance / (m_SlowRadius * m_SlowRadius);
 	linearVelocity = velocity;
 	if (pAgent->CanRenderBehavior())
 		DEBUGRENDERER2D->DrawDirection(pAgent->GetPosition(), steering.LinearVelocity, 5, Elite::Color{ 0, 1.0f, 0 });
 	return steering;
+}
+
+void Arrive::SetTargetRadius(float arrivalRadius)
+{
+	m_ArrivalRadius = arrivalRadius;
+}
+
+void Arrive::SetSlowRadius(float slowRadius)
+{
+	m_SlowRadius = slowRadius;
 }
 
 SteeringOutput Face::CalculateSteering(float deltaT, SteeringAgent* pAgent)
